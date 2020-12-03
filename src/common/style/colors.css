@@ -1,0 +1,27 @@
+html {
+    --transition: .3s;
+    --primary-background-color: white;
+    --secondary-background-color: #007bff;
+    --primary-text-color: black;
+    --secondary-text-color: white;
+    --third-text-color: #007bff;
+    --white-text-color: #ffff;
+    --primary-header-color: #007bff;
+    --primary-footer-color: #007bff;
+    --primary-checkbox-color: white;
+    --primary-checkbox-background: #c6c6c6;
+    --primary-main-menu-background: white;
+}
+
+html.dark {
+    --primary-background-color: rgba(32, 33, 36, 1);
+    --secondary-background-color: rgb(53, 107, 191);
+    --primary-text-color: #ffff;
+    --secondary-text-color: white;
+    --third-text-color: #3ea6ff;
+    --primary-header-color: rgb(41, 42, 45);
+    --primary-footer-color: rgb(41, 42, 45);
+    --primary-checkbox-color: #3ea6ff;
+    --primary-checkbox-background: #606060;
+    --primary-main-menu-background: #292929;
+}

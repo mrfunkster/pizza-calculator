@@ -1,0 +1,27 @@
+.calculator-page h2 {
+    font-size: 30px;
+    text-align: center;
+    padding: 15px;
+}
+.calculator-page h3 {
+    font-size: 18px;
+    text-align: center;
+}
+.calculator-header-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.calculator-header-img img {
+    width: 50%;
+    text-align: center;
+}
+
+@media(max-width: 767px) {
+    .calculator-header-img img {
+        width: 100%;
+    }
+    .calculator-page h2 {
+        font-size: 26px;
+    }
+}

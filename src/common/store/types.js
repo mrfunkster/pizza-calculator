@@ -1,0 +1,4 @@
+export const DARK_MODE = "DARK_MODE";
+export const LIGHT_MODE = "LIGHT_MODE";
+export const SYSTEM_DARK_MODE = "SYSTEM_DARK_MODE";
+export const SYSTEM_LIGHT_MODE = "SYSTEM_LIGHT_MODE";

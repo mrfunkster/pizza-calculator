@@ -1,0 +1,8 @@
+footer {
+    background-color: var(--primary-footer-color);
+    color: white;
+    transition: .5s;
+}
+footer h2 {
+    padding: 15px;
+}

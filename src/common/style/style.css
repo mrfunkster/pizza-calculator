@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    transition: background-color .3s;
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.p-height {
+    height: inherit;
+}
+.v-centered {
+    align-items: center;
+}
+.centered {
+    justify-content: center;
+}
+.space-between {
+    justify-content: space-between;
+}
+
+
+h3 {
+    color: var(--third-text-color);
+}
