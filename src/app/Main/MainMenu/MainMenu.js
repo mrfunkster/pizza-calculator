@@ -39,6 +39,7 @@ class MainMenu extends Component {
             ...prevState,
             isActive: clickedObj
         }))
+        this.toggleMenuShow()
     }
 
     toggleMenuShow = () => {
