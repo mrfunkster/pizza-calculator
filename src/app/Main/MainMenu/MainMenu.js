@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { initIsClickedObject } from '../../../common/store/actions'
-
 import './MainMenu.css'
 import MainMenuItem from './MainMenuItem'
 
