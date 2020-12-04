@@ -10,7 +10,7 @@ const Header = () => {
             <div className="container overflow-hidden">
                 <div className="row space-between v-centered header-bar">
                     <LanguageSwitch />
-                    <div className="col-sm-12 col page-title"><span>🍕</span>Pizza Dough Calculator</div>
+                    <div className="col-sm-12 col page-title"><span>🍕</span>Pizza Dough Calculator<span>🍕</span></div>
                     <ModeSwitch />
                 </div>
             </div>

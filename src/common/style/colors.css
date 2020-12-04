@@ -10,7 +10,7 @@ html {
     --primary-footer-color: #007bff;
     --primary-checkbox-color: white;
     --primary-checkbox-background: #c6c6c6;
-    --primary-main-menu-background: white;
+    --primary-main-menu-background: rgb(241, 241, 241);
 }
 
 html.dark {

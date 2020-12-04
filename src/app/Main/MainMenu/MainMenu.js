@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import './MainMenu.css'
@@ -6,13 +7,18 @@ import './MainMenu.css'
 class MainMenu extends Component {
 
     state = {
-        isMenuShow: true
+        isMenuShow: false
     }
 
     markActive = (e) => {
         let menuElements = document.querySelectorAll('li[menu]');
         menuElements.forEach(link => link.classList.remove('active'))
         e.target.parentElement.classList.add('active')
+        if (this.state.isMenuShow) {
+            this.setState(prevState => ({
+                isMenuShow: !prevState.isMenuShow
+            }))
+        }
     }
 
     toggleMenuShow = () => {
@@ -39,18 +45,24 @@ class MainMenu extends Component {
                 <div className={this.state.isMenuShow ? "col-sm-6 col-md-3 col-lg-3 main-menu show" : "col-sm-6 col-md-3 col-lg-3 main-menu"}
                     ref = {node => {this.node = node}}
                 >
+                    <ul className="menu-list">
+                        <li menu="/" className="active"><Link to="/" onClick={this.markActive}>Calculate</Link></li>
+                        <li menu="/about"><Link to="/about" onClick={this.markActive}>About</Link></li>
+                        <li menu="/contacts"><Link to="/contacts" onClick={this.markActive}>Contacts</Link></li>
+                    </ul>
                     <div className="show-menu-btn"
                         onClick={this.toggleMenuShow}
                     ></div>
-                    <ul className="menu-list">
-                        <li menu="" className="active"><Link to="/" onClick={this.markActive}>Calculate</Link></li>
-                        <li menu=""><Link to="/about" onClick={this.markActive}>About</Link></li>
-                        <li menu=""><Link to="/contacts" onClick={this.markActive}>Contacts</Link></li>
-                    </ul>
                 </div>
             </>
         )
     }
 }
 
-export default MainMenu
+const mapStateToProps = state => ({
+    currentLocation: state.appState.currentPathname
+})
+
+export default connect(
+    mapStateToProps
+)(MainMenu)

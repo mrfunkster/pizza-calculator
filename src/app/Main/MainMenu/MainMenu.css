@@ -5,7 +5,7 @@
     transition: var(--transition)
 }
 .menu-list li {
-    padding: 15px 10px;
+    
     margin: 5px 0;
     transition: var(--transition);
     border-radius: 15px;
@@ -29,6 +29,7 @@
     color: var(--third-text-color);
     font-size: 20px;
     width: 100%;
+    padding: 15px 10px;
     display: block;
     transition: var(--transition);
 }
@@ -36,6 +37,7 @@
 @media(max-width: 767px) {
     .main-menu {
         position: absolute;
+        width: 100%;
         z-index: 100;
         transition: var(--transition);
         transform: translateX(-100%);
@@ -52,7 +54,7 @@
         top: 50%;
         transform: translateY(-50%);
         right: -20px;
-        z-index: 1;
+        z-index: -100000;
         transition: var(--transition);
     }
     .main-overlay {
