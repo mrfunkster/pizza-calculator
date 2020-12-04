@@ -1,1 +1,4 @@
-export const GET_LOCATION = "GET_LOCATION"
+export const INIT_IS_CLICKED_OBJ = "INIT_IS_CLICKED_OBJ"
+
+export const SWITCH_TO_EN = "SWITCH_TO_EN"
+export const SWITCH_TO_RU = "SWITCH_TO_RU"

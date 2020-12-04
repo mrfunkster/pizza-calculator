@@ -1,9 +1,11 @@
-import { GET_LOCATION } from "./types";
+import { INIT_IS_CLICKED_OBJ } from "./types";
 
-const appReducer = (state = { currentPathname: "/" }, action) => {
+const appReducer = (state = {}, action) => {
     switch(action.type) {
-        case GET_LOCATION:
-            return { ...state, currentPathname: action.payload }
+        case INIT_IS_CLICKED_OBJ:
+            return {
+                isClickiedObj: action.payload
+            }
         default: return state;
     };
 }

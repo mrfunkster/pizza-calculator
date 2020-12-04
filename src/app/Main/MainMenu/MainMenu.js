@@ -1,24 +1,46 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+
+import { initIsClickedObject } from '../../../common/store/actions'
 
 import './MainMenu.css'
+import MainMenuItem from './MainMenuItem'
+
+import localization from '../../../common/localization/localization'
 
 class MainMenu extends Component {
 
     state = {
-        isMenuShow: false
+        isMenuShow: false,
+        isActive: {}
     }
 
-    markActive = (e) => {
-        let menuElements = document.querySelectorAll('li[menu]');
-        menuElements.forEach(link => link.classList.remove('active'))
-        e.target.parentElement.classList.add('active')
-        if (this.state.isMenuShow) {
-            this.setState(prevState => ({
-                isMenuShow: !prevState.isMenuShow
-            }))
+    initMark = () => {
+        let menuList = localization.en.main.mainMenu;
+        let initArr = menuList.map(({id}, index) => (
+            index === 0 ? {[id]: true} : {[id]: false}
+        ))
+        let isClickedObj = {}
+        for (let i = 0; i < initArr.length; i++) {
+            Object.assign(isClickedObj, initArr[i])
         }
+        this.setState(prevState => ({
+            ...prevState,
+            isActive: isClickedObj
+        }))
+    }
+
+
+    markActive = (id) => {
+        let clickedObj  = this.props.isActives
+        for (let key in clickedObj) {
+            clickedObj[key] = false
+        }
+        clickedObj[id] = true;
+        this.setState(prevState => ({
+            ...prevState,
+            isActive: clickedObj
+        }))
     }
 
     toggleMenuShow = () => {
@@ -38,21 +60,42 @@ class MainMenu extends Component {
         }
     }
 
+    componentDidMount() {
+        this.initMark()
+    }
+
     render() {
+        const {
+            mainMenu,
+        } = this.props;
         return (
             <>
                 <div className={this.state.isMenuShow ? "main-overlay show" : "main-overlay"}></div>
                 <div className={this.state.isMenuShow ? "col-sm-6 col-md-3 col-lg-3 main-menu show" : "col-sm-6 col-md-3 col-lg-3 main-menu"}
                     ref = {node => {this.node = node}}
                 >
-                    <ul className="menu-list">
-                        <li menu="/" className="active"><Link to="/" onClick={this.markActive}>Calculate</Link></li>
-                        <li menu="/about"><Link to="/about" onClick={this.markActive}>About</Link></li>
-                        <li menu="/contacts"><Link to="/contacts" onClick={this.markActive}>Contacts</Link></li>
-                    </ul>
                     <div className="show-menu-btn"
-                        onClick={this.toggleMenuShow}
-                    ></div>
+                        onClick={() => this.toggleMenuShow()}
+                    >
+                        <div className="show-menu-arrow"></div>
+                    </div>
+                    <ul className="menu-list">
+                        {
+                            mainMenu.map(({
+                                name,
+                                link,
+                                id
+                            }) => (
+                                <MainMenuItem key={id}
+                                    name = {name}
+                                    link = {link}
+                                    id = {id}
+                                    isActive = {this.state.isActive}
+                                    markActive = {this.markActive}
+                                />
+                            ))
+                        }
+                    </ul>
                 </div>
             </>
         )
@@ -60,7 +103,7 @@ class MainMenu extends Component {
 }
 
 const mapStateToProps = state => ({
-    currentLocation: state.appState.currentPathname
+    mainMenu: state.localization.main.mainMenu,
 })
 
 export default connect(

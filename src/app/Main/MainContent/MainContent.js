@@ -3,12 +3,16 @@ import { Route, Switch } from 'react-router'
 import About from './About/About'
 import Calculator from './Calculator/Calculator'
 import Contacts from './Contacts/Contacts'
+import WhatIsIt from './WhatIsIt/WhatIsIt'
 
 const MainContent = () => {
     return (
         <div className="col-sm-12 col-md-9 col-lg-9 main-content">
             <Switch>
                 <Route path="/" exact
+                    component={WhatIsIt}
+                />
+                <Route path="/calculate"
                     component={Calculator}
                 />
                 <Route path="/about"

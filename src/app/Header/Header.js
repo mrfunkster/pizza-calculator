@@ -3,6 +3,7 @@ import React from 'react'
 import './Header.css'
 import LanguageSwitch from './LanguageSwitch/LanguageSwitch';
 import ModeSwitch from './ModeSwitch/ModeSwitch'
+import PageTitle from './PageTitle/PageTitle';
 
 const Header = () => {
     return (
@@ -10,7 +11,7 @@ const Header = () => {
             <div className="container overflow-hidden">
                 <div className="row space-between v-centered header-bar">
                     <LanguageSwitch />
-                    <div className="col-sm-12 col page-title"><span>🍕</span>Pizza Dough Calculator<span>🍕</span></div>
+                    <PageTitle />
                     <ModeSwitch />
                 </div>
             </div>

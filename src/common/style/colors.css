@@ -11,17 +11,21 @@ html {
     --primary-checkbox-color: white;
     --primary-checkbox-background: #c6c6c6;
     --primary-main-menu-background: rgb(241, 241, 241);
+    --secondary-main-menu-background: rgb(243, 243, 243);
+    --primary-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    --secondary-box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 }
 
 html.dark {
     --primary-background-color: rgba(32, 33, 36, 1);
     --secondary-background-color: rgb(53, 107, 191);
-    --primary-text-color: #ffff;
-    --secondary-text-color: white;
+    --primary-text-color: rgb(194, 194, 194);
+    --secondary-text-color: rgb(199, 199, 199);
     --third-text-color: #3ea6ff;
     --primary-header-color: rgb(41, 42, 45);
     --primary-footer-color: rgb(41, 42, 45);
     --primary-checkbox-color: #3ea6ff;
     --primary-checkbox-background: #606060;
     --primary-main-menu-background: #292929;
+    --secondary-main-menu-background: #303030;
 }

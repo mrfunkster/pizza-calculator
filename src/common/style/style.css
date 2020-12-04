@@ -10,6 +10,7 @@ body {
     min-height: 100vh;
     background-color: var(--primary-background-color);
     color: var(--primary-text-color);
+    padding-bottom: 46px;
 }
 
 footer {
@@ -31,7 +32,23 @@ footer {
     justify-content: space-between;
 }
 
+h2 {
+    color: var(--third-text-color);
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    line-height: 30px;
+    background-color: var(--secondary-main-menu-background);
+    box-shadow: var(--secondary-box-shadow);
+    transition: var(--transition);
+    border-radius: 15px;
+    font-weight: 500;
+}
 
 h3 {
-    color: var(--third-text-color);
+    color: var(--primary-text-color);
+    font-size: 18px;
+    text-align: center;
+    line-height: 20px;
+    padding: 15px;
 }

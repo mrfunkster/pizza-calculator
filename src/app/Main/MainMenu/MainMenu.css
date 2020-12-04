@@ -2,7 +2,9 @@
     background-color: var(--primary-main-menu-background);
     border-radius: 15px;
     padding: 15px 15px;
-    transition: var(--transition)
+    transition: var(--transition);
+    position: relative;
+    box-shadow: var(--secondary-box-shadow);
 }
 .menu-list li {
     
@@ -13,6 +15,7 @@
 
 .menu-list li:hover {
     background-color: var(--secondary-background-color);
+    box-shadow: var(--secondary-box-shadow);
 }
 .menu-list li.active {
     background-color: var(--secondary-background-color);
@@ -29,33 +32,37 @@
     color: var(--third-text-color);
     font-size: 20px;
     width: 100%;
-    padding: 15px 10px;
+    padding: 15px 15px;
     display: block;
     transition: var(--transition);
 }
 
 @media(max-width: 767px) {
     .main-menu {
-        position: absolute;
+        position: fixed;
         width: 100%;
-        z-index: 100;
         transition: var(--transition);
         transform: translateX(-100%);
     }
     .main-menu.show {
         transform: translateX(0);
     }
+    .main-menu.show .show-menu-btn {
+        animation: none;
+    }
     .show-menu-btn {
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-color: var(--secondary-background-color);
+        background-color: #3697eb;
+        box-shadow: var(--secondary-box-shadow);
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
+        transform-origin: center center;
+        transform: scale(1.1) translateY(-50%);
         right: -20px;
-        z-index: -100000;
         transition: var(--transition);
+        animation: .5s infinite alternate pulse;
     }
     .main-overlay {
         position: absolute;
@@ -70,5 +77,27 @@
     .main-overlay.show {
         visibility: visible;
         opacity: 1;
+    }
+    .show-menu-arrow {
+        width: 15px;
+        height: 15px;
+        border: 3px solid rgba(255, 255, 255, .7);
+        box-shadow: var(--secondary-box-shadow);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1.1) translateY(-50%);
+    }
+    to {
+        transform: scale(1.15) translateY(-50%);
     }
 }

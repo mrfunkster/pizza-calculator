@@ -1,0 +1,19 @@
+.page-title-mobile {
+    display: none;
+    text-align: center;
+    margin: 0;
+    font-size: 40px;
+}
+
+.page-title-mobile a {
+    text-decoration: none;
+}
+
+@media(max-width: 767px) {
+    .page-title-mobile {
+        display: block;
+    }
+    .page-title-main {
+        display: none;
+    }
+}

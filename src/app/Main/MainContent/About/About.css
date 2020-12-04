@@ -1,0 +1,10 @@
+.about-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    padding: 15px 15px;
+    background-color: var(--primary-main-menu-background);
+    box-shadow: var(--secondary-box-shadow);
+    transition: var(--transition);
+}
