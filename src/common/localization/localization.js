@@ -14,10 +14,17 @@ const localization = {
                 whatIsIt: {
                     whatPageTitle: "Do you like pizza making as I? You are in the right place!",
                     whatPageDescription: "This simple tools can help you quickly calculate proportion of ingridients to make the best pizza in your whole life!",
+                    whatPageButton: "Let's go!"
                 },
-                calculate: {},
-                about: {},
-                contacts: {}
+                calculate: {
+                    calculatePageTitle: "Pizza-calculator"
+                },
+                about: {
+                    aboutPageTitle: "About this Project"
+                },
+                contacts: {
+                    contactsPageTitle: "My Contacts"
+                }
             },
             mainMenu: [
                 {
@@ -60,10 +67,17 @@ const localization = {
                 whatIsIt: {
                     whatPageTitle: "Если ты любишь пиццу так же как я, ты здесь не зря!",
                     whatPageDescription: "Это простое приложение поможет тебе замесить тесто мечты, рассчитав все необходимые пропорции ингридиентов для самой вкусной пиццы в твоей жизни!",
+                    whatPageButton: "Вперед!"
                 },
-                calculate: {},
-                about: {},
-                contacts: {}
+                calculate: {
+                    calculatePageTitle: "Пицца-калькулятор"
+                },
+                about: {
+                    aboutPageTitle: "Об этом проекте"
+                },
+                contacts: {
+                    contactsPageTitle: "Как меня найти?"
+                }
             },
             mainMenu: [
                 {

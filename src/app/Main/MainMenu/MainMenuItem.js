@@ -1,17 +1,16 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const MainMenuItem = ({
     name,
     link,
-    id,
-    isActive,
-    markActive
+    toggleMenuShow
 }) => {
+    const location = useLocation().pathname;
     return (
         <li
-            className={isActive[id] ? "active" : ""}
+            className={(location === link) ? "active" : ""}
         >
-            <Link onClick={() => markActive(id)} to={link}>{name}</Link>
+            <Link onClick={() => toggleMenuShow()} to={link}>{name}</Link>
         </li>
     )
 }

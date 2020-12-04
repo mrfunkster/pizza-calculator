@@ -9,6 +9,11 @@
     text-decoration: none;
 }
 
+.page-title-mobile a span {
+    color: transparent;
+    text-shadow: 0 0 0 rgb(209, 209, 209);
+}
+
 @media(max-width: 767px) {
     .page-title-mobile {
         display: block;

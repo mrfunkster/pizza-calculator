@@ -26,7 +26,7 @@ const LanguageSwitch = ({
                 onClick={() => LanguageSwitch()}
             >
                 <span>{currentLanguage}</span>
-                <span>{currentFlag}</span>
+                {/* <span>{currentFlag}</span> */}
             </div> 
         </div>
     );

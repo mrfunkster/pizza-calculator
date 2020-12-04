@@ -1,6 +1,6 @@
 html {
     --transition: .3s;
-    --primary-background-color: white;
+    --primary-background-color: rgb(230, 230, 230);
     --secondary-background-color: #007bff;
     --primary-text-color: black;
     --secondary-text-color: white;
@@ -14,6 +14,7 @@ html {
     --secondary-main-menu-background: rgb(243, 243, 243);
     --primary-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
     --secondary-box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    --main-text-color: white;
 }
 
 html.dark {
@@ -28,4 +29,5 @@ html.dark {
     --primary-checkbox-background: #606060;
     --primary-main-menu-background: #292929;
     --secondary-main-menu-background: #303030;
+    --main-text-color: rgb(214, 214, 214);
 }

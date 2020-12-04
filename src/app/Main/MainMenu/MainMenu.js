@@ -4,42 +4,10 @@ import { connect } from 'react-redux'
 import './MainMenu.css'
 import MainMenuItem from './MainMenuItem'
 
-import localization from '../../../common/localization/localization'
-
 class MainMenu extends Component {
 
     state = {
         isMenuShow: false,
-        isActive: {}
-    }
-
-    initMark = () => {
-        let menuList = localization.en.main.mainMenu;
-        let initArr = menuList.map(({id}, index) => (
-            index === 0 ? {[id]: true} : {[id]: false}
-        ))
-        let isClickedObj = {}
-        for (let i = 0; i < initArr.length; i++) {
-            Object.assign(isClickedObj, initArr[i])
-        }
-        this.setState(prevState => ({
-            ...prevState,
-            isActive: isClickedObj
-        }))
-    }
-
-
-    markActive = (id) => {
-        let clickedObj  = this.state.isActive
-        for (let key in clickedObj) {
-            clickedObj[key] = false
-        }
-        clickedObj[id] = true;
-        this.setState(prevState => ({
-            ...prevState,
-            isActive: clickedObj
-        }))
-        this.toggleMenuShow()
     }
 
     toggleMenuShow = () => {
@@ -57,10 +25,6 @@ class MainMenu extends Component {
         if(!this.node.contains(e.target)) {
             this.toggleMenuShow()
         }
-    }
-
-    componentDidMount() {
-        this.initMark()
     }
 
     render() {
@@ -88,9 +52,7 @@ class MainMenu extends Component {
                                 <MainMenuItem key={id}
                                     name = {name}
                                     link = {link}
-                                    id = {id}
-                                    isActive = {this.state.isActive}
-                                    markActive = {this.markActive}
+                                    toggleMenuShow = {this.toggleMenuShow}
                                 />
                             ))
                         }

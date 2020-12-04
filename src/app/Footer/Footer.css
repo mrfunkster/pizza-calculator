@@ -4,6 +4,7 @@ footer {
     transition: .5s;
     box-shadow: var(--secondary-box-shadow);
 }
-footer h2 {
+footer h3 {
     padding: 15px;
+    color: rgb(223, 223, 223);
 }

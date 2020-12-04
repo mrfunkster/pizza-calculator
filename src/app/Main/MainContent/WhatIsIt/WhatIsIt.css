@@ -11,8 +11,9 @@
 .what-page h3 {
     font-size: 18px;
     text-align: center;
-    line-height: 20px;
+    line-height: 24px;
     padding: 15px;
+    margin: 15px 0;
 }
 .what-header-img {
     width: 50%;
@@ -21,10 +22,15 @@
     width: 100%;
     object-fit: contain;
 }
-
+.link-button {
+    background-color: var(--secondary-background-color);
+    box-shadow: var(--secondary-box-shadow);
+    border-radius: 15px;
+    margin-top: 25px;
+}
 .what-page a {
     text-decoration: none;
-    color: var(--third-text-color);
+    color: var(--main-text-color);
     font-size: 20px;
     width: 100%;
     padding: 15px 15px;
@@ -38,5 +44,11 @@
     }
     .what-page h2 {
         font-size: 26px;
+    }
+    .link-button {
+        width: 100%;
+    }
+    .link-button a {
+        text-align: center;
     }
 }

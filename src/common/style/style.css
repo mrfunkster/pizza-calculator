@@ -9,7 +9,7 @@ body {
     position: relative;
     min-height: 100vh;
     background-color: var(--primary-background-color);
-    color: var(--primary-text-color);
+    color: var(--main-text-color);
     padding-bottom: 46px;
 }
 

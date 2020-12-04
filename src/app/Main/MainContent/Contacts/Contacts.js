@@ -1,13 +1,31 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import './Contacts.css'
 
-const Contacts = () => {
+const Contacts = ({
+    contactsPageTitle
+}) => {
     return (
         <div className="contacts-page">
-            <h2>Contacts Page</h2>
+            <h2>{contactsPageTitle}</h2>
         </div>
     )
 }
 
-export default Contacts
+const mapDispatchToProps = state => ({
+    contactsPageTitle: state.localization.main.mainContent.contacts.contactsPageTitle
+})
+
+Contacts.propTypes = {
+    contactsPageTitle: PropTypes.string
+}
+
+Contacts.defaultProps = {
+    contactsPageTitle: "Contacts Page Title..."
+}
+
+export default connect(
+    mapDispatchToProps
+)(Contacts)

@@ -1,6 +1,6 @@
 header {
     background-color: var(--primary-header-color);
-    color: white;
+    color: var(--main-text-color);
     transition: .5s;
     position: relative;
     z-index: 1000;

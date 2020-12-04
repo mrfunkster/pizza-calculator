@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom'
 
 const WhatIsIt = ({
     whatPageTitle,
-    whatPageDescription
+    whatPageDescription,
+    whatPageButton
 }) => {
     return (
         <div className="what-page">
@@ -19,24 +20,29 @@ const WhatIsIt = ({
             <div className="what-header-img">
                 <img src="/images/pizza2.png" alt="pizza"/>
             </div>
-            <Link to="/calculate">Lets Go</Link>
+            <div className="link-button">
+                <Link to="/calculate">{whatPageButton}</Link>
+            </div> 
         </div>
     )
 }
 
 const mapStateToProps = state => ({
     whatPageTitle: state.localization.main.mainContent.whatIsIt.whatPageTitle,
-    whatPageDescription: state.localization.main.mainContent.whatIsIt.whatPageDescription
+    whatPageDescription: state.localization.main.mainContent.whatIsIt.whatPageDescription,
+    whatPageButton: state.localization.main.mainContent.whatIsIt.whatPageButton
 })
 
 WhatIsIt.propTypes = {
     whatPageTitle:       PropTypes.string,
-    whatPageDescription: PropTypes.string
+    whatPageDescription: PropTypes.string,
+    whatPageButton:      PropTypes.string
 }
 
 WhatIsIt.defaultProps = {
     whatPageTitle: "Page Title...",
-    whatPageDescription: "Page Description..."
+    whatPageDescription: "Page Description...",
+    whatPageButton: "Page Button..."
 }
 
 export default connect(

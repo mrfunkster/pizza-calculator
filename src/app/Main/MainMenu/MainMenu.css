@@ -6,8 +6,7 @@
     position: relative;
     box-shadow: var(--secondary-box-shadow);
 }
-.menu-list li {
-    
+.menu-list li {    
     margin: 5px 0;
     transition: var(--transition);
     border-radius: 15px;
@@ -21,15 +20,15 @@
     background-color: var(--secondary-background-color);
 }
 .menu-list li:hover a {
-    color: var(--white-text-color);
+    color: var(--main-text-color);
 }
 .menu-list li.active a {
-    color: var(--white-text-color);
+    color: var(--main-text-color);
 }
 
 .menu-list li a {
     text-decoration: none;
-    color: var(--third-text-color);
+    color: var(--main-text-color);
     font-size: 20px;
     width: 100%;
     padding: 15px 15px;
