@@ -32,7 +32,7 @@ class MainMenu extends Component {
 
 
     markActive = (id) => {
-        let clickedObj  = this.props.isActives
+        let clickedObj  = this.state.isActive
         for (let key in clickedObj) {
             clickedObj[key] = false
         }
