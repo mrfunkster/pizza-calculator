@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import { animateScroll as scroll } from 'react-scroll'
 
 const MainMenuItem = ({
     name,
@@ -10,7 +11,13 @@ const MainMenuItem = ({
         <li
             className={(location === link) ? "active" : ""}
         >
-            <Link onClick={() => toggleMenuShow()} to={link}>{name}</Link>
+            <Link 
+                onClick={() => {
+                    scroll.scrollToTop()
+                    toggleMenuShow()
+                }} to={link}
+                >{name}
+            </Link>
         </li>
     )
 }
