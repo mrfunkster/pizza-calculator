@@ -12,7 +12,7 @@ const localization = {
         main: {
             mainContent: {
                 whatIsIt: {
-                    whatPageTitle: "Do you like pizza making as I? You are in the right place!",
+                    whatPageTitle: "Do you like pizza making as me? You are in the right place!",
                     whatPageDescription: "This simple tools can help you quickly calculate proportion of ingridients to make the best pizza in your whole life!",
                     whatPageButton: "Let's go!"
                 },

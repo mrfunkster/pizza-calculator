@@ -18,12 +18,13 @@
 }
 .menu-list li.active {
     background-color: var(--secondary-background-color);
+    box-shadow: var(--secondary-box-shadow);
 }
 .menu-list li:hover a {
-    color: var(--main-text-color);
+    color: var(--primary-background-color);
 }
 .menu-list li.active a {
-    color: var(--main-text-color);
+    color: var(--primary-background-color);
 }
 
 .menu-list li a {
@@ -50,16 +51,16 @@
         animation: none;
     }
     .show-menu-btn {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
-        background-color: #3697eb;
-        box-shadow: var(--secondary-box-shadow);
+        background-color: var(--third-background-color);
+        box-shadow: var(--third-box-shadow);
         position: absolute;
         top: 50%;
         transform-origin: center center;
         transform: scale(1.1) translateY(-50%);
-        right: -20px;
+        right: -25px;
         transition: var(--transition);
         animation: .5s infinite alternate pulse;
     }
@@ -78,9 +79,9 @@
         opacity: 1;
     }
     .show-menu-arrow {
-        width: 15px;
-        height: 15px;
-        border: 3px solid rgba(255, 255, 255, .7);
+        width: 20px;
+        height: 20px;
+        border: 3px solid var(--primary-background-color);
         box-shadow: var(--secondary-box-shadow);
         position: absolute;
         top: 50%;

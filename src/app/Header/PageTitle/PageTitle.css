@@ -9,10 +9,13 @@
     text-decoration: none;
 }
 
-.page-title-mobile a span {
+.page-title-mobile a span,
+.page-title-main span {
     color: transparent;
-    text-shadow: 0 0 0 rgb(209, 209, 209);
+    text-shadow: 0 0 0 var(--primary-checkbox-color);
+    transition: var(--transition);
 }
+
 
 @media(max-width: 767px) {
     .page-title-mobile {

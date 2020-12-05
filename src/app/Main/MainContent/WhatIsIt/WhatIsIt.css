@@ -30,7 +30,7 @@
 }
 .what-page a {
     text-decoration: none;
-    color: var(--main-text-color);
+    color: var(--primary-background-color);
     font-size: 20px;
     width: 100%;
     padding: 15px 15px;

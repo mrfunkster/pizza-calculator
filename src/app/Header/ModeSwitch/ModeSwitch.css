@@ -18,7 +18,6 @@
     background-color: #c6c6c6;
     border-radius: .5em;
     outline: none;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
     transition: .3s;
     position: relative;
     cursor: pointer;
@@ -43,5 +42,5 @@
 }
 .switch__checkbox:checked:after {
     left: 1.25em;
-    background-color: #3ea6ff;
+    background-color: var(--secondary-background-color);
 }

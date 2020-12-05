@@ -1,4 +1,4 @@
-html {
+/* html {
     --transition: .3s;
     --primary-background-color: rgb(230, 230, 230);
     --secondary-background-color: #007bff;
@@ -15,17 +15,39 @@ html {
     --primary-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
     --secondary-box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
     --main-text-color: white;
+} */
+
+html {
+    --transition: .3s;
+    --primary-background-color: rgb(230, 230, 230);
+    --secondary-background-color: #BF3939;
+    --third-background-color:  #7641BF;
+    --primary-text-color: black;
+    --secondary-text-color: white;
+    --third-text-color: #BF3939;
+    --white-text-color: #ffff;
+    --primary-header-color: #7641BF;
+    --primary-footer-color: #217335;
+    --primary-checkbox-color: white;
+    --primary-checkbox-background: #c6c6c6;
+    --primary-main-menu-background: rgb(241, 241, 241);
+    --secondary-main-menu-background: rgb(243, 243, 243);
+    --primary-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    --secondary-box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+    --third-box-shadow: 0 1rem 3rem rgba(0,0,0,.4);
+    --main-text-color: white;
 }
 
 html.dark {
     --primary-background-color: rgba(32, 33, 36, 1);
-    --secondary-background-color: rgb(53, 107, 191);
+    --secondary-background-color: #F29F05;
+    --third-background-color:  #ffa600;
     --primary-text-color: rgb(194, 194, 194);
     --secondary-text-color: rgb(199, 199, 199);
-    --third-text-color: #3ea6ff;
+    --third-text-color: #bd910c;
     --primary-header-color: rgb(41, 42, 45);
     --primary-footer-color: rgb(41, 42, 45);
-    --primary-checkbox-color: #3ea6ff;
+    --primary-checkbox-color: #F29F05;
     --primary-checkbox-background: #606060;
     --primary-main-menu-background: #292929;
     --secondary-main-menu-background: #303030;
