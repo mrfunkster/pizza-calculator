@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import './Contacts.css'
+import ScrollToTopOnMount from '../../../../common/components/ScrollToTopOnMount'
 
 const Contacts = ({
     contactsPageTitle
 }) => {
     return (
         <div className="contacts-page">
+            <ScrollToTopOnMount />
             <h2>{contactsPageTitle}</h2>
         </div>
     )

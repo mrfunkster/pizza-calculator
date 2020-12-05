@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+
+import ScrollToTopOnMount from '../../../../common/components/ScrollToTopOnMount'
 
 import './WhatIsIt.css'
-import { Link } from 'react-router-dom'
+
 
 const WhatIsIt = ({
     whatPageTitle,
@@ -12,6 +15,7 @@ const WhatIsIt = ({
 }) => {
     return (
         <div className="what-page">
+            <ScrollToTopOnMount />
             <div className="what-header-img">
                 <img src="/images/pizza.png" alt="pizza"/>
             </div>
