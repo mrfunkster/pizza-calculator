@@ -1,0 +1,31 @@
+.scroll-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary-background-color);
+    box-shadow: var(--third-box-shadow);
+    cursor: pointer;
+    position: fixed;
+    bottom: 61px;
+    right: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition)
+}
+.scroll-btn.show {
+    visibility: visible;
+    opacity: .8;
+}
+.scroll-btn-arrow {
+    width: 20px;
+    height: 20px;
+    border-left: 3px solid var(--primary-background-color);
+    border-top: 3px solid var(--primary-background-color);
+    box-shadow: var(--secondary-box-shadow);
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%) rotate(45deg);
+    z-index: 100;
+}
