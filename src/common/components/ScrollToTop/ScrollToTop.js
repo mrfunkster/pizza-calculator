@@ -6,7 +6,7 @@ import './ScrollToTop.css'
 class ScrollToTop extends Component {
 
     state = {
-        isShown: true
+        isShown: false
     }
 
     showScrollBtn = () => {
