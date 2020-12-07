@@ -13,7 +13,7 @@ class ScrollToTop extends Component {
         const clientHeight = document.documentElement.clientHeight;
         window.addEventListener("scroll", () => {
             const scrolledPx = window.scrollY
-            if(scrolledPx >= clientHeight/4) {
+            if(scrolledPx >= clientHeight/3) {
                 this.setState({
                     isShown: true
                 })

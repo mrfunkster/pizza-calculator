@@ -13,8 +13,12 @@ const MainMenuItem = ({
         >
             <Link 
                 onClick={() => {
-                    scroll.scrollToTop()
-                    toggleMenuShow()
+                    scroll.scrollToTop({
+                        duration: 800
+                    })
+                    if(document.documentElement.clientWidth < 768) {
+                        toggleMenuShow()
+                    }
                 }} to={link}
                 >{name}
             </Link>

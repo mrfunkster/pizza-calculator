@@ -2,8 +2,10 @@ header {
     background-color: var(--primary-header-color);
     color: var(--main-text-color);
     transition: .5s;
-    position: relative;
-    z-index: 1000;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
     box-shadow: var(--secondary-box-shadow);
 }
 .page-title {

@@ -32,7 +32,7 @@ const ModeSwitch = () => {
     return (
         <div className="col-sm-4 col mode">
             <div className="mode-switch">
-                <span>{isDarkMode ? "🔆" : "🌙"}</span>
+                <span>{isDarkMode ? "🌙" : "🔆"}</span>
                 <input type="checkbox" className="switch__checkbox" 
                     checked={isDarkMode}
                     onChange={modeSwitcher}

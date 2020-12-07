@@ -13,8 +13,10 @@ class MainMenu extends Component {
     toggleMenuShow = () => {
         if (!this.state.isMenuShow) {
             document.addEventListener("click", this.handleOutsideClick, false);
+            document.body.classList.add('lock')
           } else {
             document.removeEventListener("click", this.handleOutsideClick, false);
+            document.body.classList.remove('lock')
           }
         this.setState(prevState => ({
             isMenuShow: !prevState.isMenuShow

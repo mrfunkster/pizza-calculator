@@ -55,3 +55,7 @@ html.dark {
     --main-text-color: rgb(214, 214, 214);
     --second-text-color: rgb(214, 214, 214);
 }
+
+html.dark img {
+    filter: brightness(80%);
+}

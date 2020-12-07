@@ -17,10 +17,14 @@
 }
 .what-header-img {
     width: 50%;
+    padding-top: 27%;
+    position: relative;
 }
 .what-header-img img {
     width: 100%;
     object-fit: contain;
+    position: absolute;
+    top: 0;
 }
 .link-button {
     background-color: var(--secondary-background-color);
@@ -41,6 +45,7 @@
 @media(max-width: 767px) {
     .what-header-img {
         width: 100%;
+        padding-top: 54%;
     }
     .what-page h2 {
         font-size: 26px;

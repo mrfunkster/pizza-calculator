@@ -43,6 +43,7 @@
         width: 100%;
         transition: var(--transition);
         transform: translateX(-100%);
+        z-index: 1001;
     }
     .main-menu.show {
         transform: translateX(0);
@@ -66,6 +67,7 @@
     }
     .main-overlay {
         position: absolute;
+        z-index: 1000;
         top: 0;
         background-color: rgba(0, 0, 0, .8);
         width: 100%;
