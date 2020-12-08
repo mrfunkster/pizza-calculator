@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import './Calculator.css'
-import ScrollToTopOnMount from '../../../../common/components/ScrollToTopOnMount'
 import CalculateInputSection from './CalculateInputSection'
 import CalculationResult from './CalculationResult'
 
@@ -13,7 +12,6 @@ const Calculator = ({
 }) => {
     return (
         <div className="calculator-page">
-            <ScrollToTopOnMount />
             <h2>{calculatePageTitle}</h2>
             {
                 !isCalculated ? <CalculateInputSection /> : <CalculationResult />

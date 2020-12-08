@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import ScrollToTopOnMount from '../../../../common/components/ScrollToTopOnMount'
 import { isFreshYeast, inputHandler, resetInputs, calculateInputs } from '../../../../common/store/actions'
 
 class CalculateInputSection extends Component {
@@ -30,7 +31,6 @@ class CalculateInputSection extends Component {
                 console.log("PIZZA COUNT EMPTY")
             }
         } else {
-            console.log("CALCULATED")
             this.props.calculateInputs()
         }
     }
@@ -59,6 +59,7 @@ class CalculateInputSection extends Component {
         } = this.props
         return (
             <>
+                <ScrollToTopOnMount />
                 <h3>Let's calculate some ingridients!</h3>
                 <div className="input-section">
                     <form onSubmit={(e) => e.preventDefault()}>

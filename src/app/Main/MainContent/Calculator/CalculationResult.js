@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import ScrollToTopOnMount from '../../../../common/components/ScrollToTopOnMount'
 
 import { backToCalculationInputs } from '../../../../common/store/actions'
 
@@ -15,6 +16,7 @@ const CalculationResult = ({
 }) => {
     return (
         <>
+            <ScrollToTopOnMount />
             <br/>
             <h3>Calculation Result:</h3>
             <div className="result-section">
