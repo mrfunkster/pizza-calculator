@@ -49,7 +49,17 @@ const localization = {
                 }
             ]
         },
-        footer: {}
+        footer: {},
+        common: {
+            unavivablePage: {
+                unavivablePageTitle: "Ooops!",
+                unavivablePageDescription1: "It looks like you trying to get unaviable resources from",
+                unavivablePageDescription2: "and got a bad result like",
+                unavivablePageDescription3: "error 404",
+                unavivablePageDescription4: "Don't worry about it! Just click on the button bellow and relax :)",
+                unavivablePageButton: "Go Home"
+            }
+        }
     },
 
     ru: {
@@ -102,7 +112,17 @@ const localization = {
                 }
             ]
         },
-        footer: {}
+        footer: {},
+        common: {
+            unavivablePage: {
+                unavivablePageTitle: "Ууупс!",
+                unavivablePageDescription1: "Похоже на то, что вы пытались получить несуществуюший контент по ссылке",
+                unavivablePageDescription2: "и получили в ответ",
+                unavivablePageDescription3: "ошибка 404",
+                unavivablePageDescription4: "Не стоит переживать по этому поводу! Просто нажмите на кнопочку ниже :)",
+                unavivablePageButton: "Домой"
+            }
+        }
     }
 }
 
