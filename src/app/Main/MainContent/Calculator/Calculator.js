@@ -5,21 +5,27 @@ import { connect } from 'react-redux'
 import './Calculator.css'
 import ScrollToTopOnMount from '../../../../common/components/ScrollToTopOnMount'
 import CalculateInputSection from './CalculateInputSection'
+import CalculationResult from './CalculationResult'
 
 const Calculator = ({
-    calculatePageTitle
+    calculatePageTitle,
+    isCalculated
 }) => {
     return (
         <div className="calculator-page">
             <ScrollToTopOnMount />
             <h2>{calculatePageTitle}</h2>
-            <CalculateInputSection />
+            {
+                !isCalculated ? <CalculateInputSection /> : <CalculationResult />
+            }
+            
         </div>
     )
 }
 
 const mapDispatchToProps = state => ({
-    calculatePageTitle: state.localization.main.mainContent.calculate.calculatePageTitle
+    calculatePageTitle: state.localization.main.mainContent.calculate.calculatePageTitle,
+    isCalculated: state.calculationData.isCalculated
 })
 
 Calculator.propTypes = {

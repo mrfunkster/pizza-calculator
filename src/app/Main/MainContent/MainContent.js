@@ -21,14 +21,14 @@ const MainContent = () => {
     return (
         <div className="col-sm-12 col-md-9 col-lg-9 main-content">
             <Switch>
-            {
-                routes.map(({path, name, Component}) => (
-                    <Route key={name} path={path} exact>
-                        <Component />
-                    </Route>
-                ))
-            }
-            <Route path='*' component={UnaviablePage}/>
+                {
+                    routes.map(({path, name, Component}) => (
+                        <Route key={name} path={path} exact>
+                            <Component />
+                        </Route>
+                    ))
+                }
+                <Route path='*' component={UnaviablePage}/>
             </Switch>
         </div>
     )

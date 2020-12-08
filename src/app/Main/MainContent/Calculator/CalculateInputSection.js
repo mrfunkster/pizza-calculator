@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import { isFreshYeast, inputHandler, resetInputs } from '../../../../common/store/actions'
+import { isFreshYeast, inputHandler, resetInputs, calculateInputs } from '../../../../common/store/actions'
 
 class CalculateInputSection extends Component {
 
@@ -32,10 +31,25 @@ class CalculateInputSection extends Component {
             }
         } else {
             console.log("CALCULATED")
+            this.props.calculateInputs()
         }
     }
 
-    render() {
+    restoreOnBlur = e => {
+        e.persist()
+        const defaultValue = {
+            ballWeight: 200,
+            pizzaCount: 1
+        }
+        let key = e.target.name
+        if(!this.props[key]) {
+            this.props.inputHandler(
+                key, defaultValue[key]
+            )
+        }
+    }
+
+    render() { 
         const {
             isFresh,
             isFreshYeast,
@@ -57,6 +71,7 @@ class CalculateInputSection extends Component {
                                 value={ballWeight}
                                 onChange={this.changeInputHandler}
                                 onFocus={this.clearInput}
+                                onBlur={this.restoreOnBlur}
                             />
                         </div>
                         <div className="row individual-input">
@@ -82,23 +97,25 @@ class CalculateInputSection extends Component {
                                 <div className="checkbox-description">{isFresh ? "Fresh" : "Dry"}</div>
                             </div>
                         </div>
-                        <div className="row button-section">
-                            <div className="col-sm-12 col-md-6 col-lg-6">
-                                <div className="link-button cancel">
-                                    <div className="un-btn"
-                                        onClick={() => resetInputs()}
-                                    >Reset to default</div>
-                                </div>
-                            </div>
-                            <div className="col-sm-12 col-md-6 col-lg-6">
-                                <div className="link-button submit">
-                                    <div className="un-btn"
-                                        onClick={() => this.checkInputsAndSubmit()}
-                                    >Calculate</div>
-                                </div>
+                    </form>
+                </div>
+                <div className="button-container">
+                    <div className="row button-section">
+                        <div className="col-sm-12 col-md-6 col-lg-6">
+                            <div className="link-button cancel">
+                                <div className="un-btn"
+                                    onClick={() => resetInputs()}
+                                >Reset to default</div>
                             </div>
                         </div>
-                    </form>
+                        <div className="col-sm-12 col-md-6 col-lg-6">
+                            <div className="link-button submit">
+                                <div className="un-btn"
+                                    onClick={() => this.checkInputsAndSubmit()}
+                                >Calculate</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </>
         )
@@ -109,7 +126,8 @@ class CalculateInputSection extends Component {
 const mapDispatchToProps = {
     isFreshYeast,
     inputHandler,
-    resetInputs
+    resetInputs,
+    calculateInputs
 }
 
 const mapStateToProps = state => ({

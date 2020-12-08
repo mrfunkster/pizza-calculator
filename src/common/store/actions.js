@@ -1,4 +1,4 @@
-import { INPUT_HANDLER, IS_FRESH_YEAST, RESET_INPUTS, SWITCH_TO_EN, SWITCH_TO_RU } from "./types";
+import { BACK_TO_CALCULATION_INPUTS, CALCULATE_INPUTS, INPUT_HANDLER, IS_FRESH_YEAST, RESET_INPUTS, SWITCH_TO_EN, SWITCH_TO_RU } from "./types";
 
 export const switchToEN = () => {
     return {
@@ -29,5 +29,17 @@ export const inputHandler = (key, value) => {
 export const resetInputs = () => {
     return {
         type: RESET_INPUTS
+    }
+}
+
+export const calculateInputs = () => {
+    return {
+        type: CALCULATE_INPUTS
+    }
+}
+
+export const backToCalculationInputs = () => {
+    return {
+        type: BACK_TO_CALCULATION_INPUTS
     }
 }
