@@ -16,7 +16,7 @@ const PageTitle = ({
                 </Link>
             </div>
             <div className="page-title-main">
-                <span>🍕</span>{mainPageTitle}<span>🍕</span>
+                <span>🍕</span>{mainPageTitle}<span className="reverse-span">🍕</span>
             </div>
         </div>
     )

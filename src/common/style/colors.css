@@ -37,6 +37,7 @@ html {
     --third-box-shadow: 0 1rem 3rem rgba(0,0,0,.4);
     --main-text-color: white;
     --second-text-color: black;
+    --warnings-color: #A63333;
 }
 
 html.dark {
@@ -54,6 +55,7 @@ html.dark {
     --secondary-main-menu-background: #303030;
     --main-text-color: rgb(214, 214, 214);
     --second-text-color: rgb(214, 214, 214);
+    --warnings-color: #BF3939;
 }
 
 html.dark img {

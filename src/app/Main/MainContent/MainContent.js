@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Route, Switch } from 'react-router'
 
 import About from './About/About'
 import Calculator from './Calculator/Calculator'
@@ -7,6 +7,7 @@ import Contacts from './Contacts/Contacts'
 import WhatIsIt from './WhatIsIt/WhatIsIt'
 
 import './MainContent.css'
+import UnaviablePage from '../../../common/components/UnaviablePage/UnaviablePage'
 
 const MainContent = () => {
 
@@ -19,6 +20,7 @@ const MainContent = () => {
 
     return (
         <div className="col-sm-12 col-md-9 col-lg-9 main-content">
+            <Switch>
             {
                 routes.map(({path, name, Component}) => (
                     <Route key={name} path={path} exact>
@@ -26,6 +28,8 @@ const MainContent = () => {
                     </Route>
                 ))
             }
+            <Route path='*' component={UnaviablePage}/>
+            </Switch>
         </div>
     )
 }
