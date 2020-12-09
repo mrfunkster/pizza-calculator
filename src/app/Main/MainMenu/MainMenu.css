@@ -5,6 +5,8 @@
     transition: var(--transition);
     position: relative;
     box-shadow: var(--secondary-box-shadow);
+    max-height: 100vh;
+    transition: max-height .5s ease-in;
 }
 .menu-list li {    
     margin: 5px 0;

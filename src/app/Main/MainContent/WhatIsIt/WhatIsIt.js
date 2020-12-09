@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 import ScrollToTopOnMount from '../../../../common/components/ScrollToTopOnMount'
 
@@ -14,7 +15,12 @@ const WhatIsIt = ({
     whatPageButton
 }) => {
     return (
-        <div className="what-page">
+        <motion.div className="what-page"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3, transition: 'linear' }}
+        >
             <ScrollToTopOnMount />
             <div className="what-header-img">
                 <img src="/images/pizza.png" alt="pizza"/>
@@ -27,7 +33,7 @@ const WhatIsIt = ({
             <div className="link-button">
                 <Link to="/calculate">{whatPageButton}</Link>
             </div> 
-        </div>
+        </motion.div>
     )
 }
 

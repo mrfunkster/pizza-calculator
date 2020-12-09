@@ -1,9 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import { connect } from 'react-redux'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import ScrollToTopOnMount from '../../../../common/components/ScrollToTopOnMount'
 import { isFreshYeast, inputHandler, resetInputs, calculateInputs, radioToggle, calculateByFlour } from '../../../../common/store/actions'
 
 class CalculateInputSection extends Component {
+
+    nodeRef = createRef(null)
 
     changeInputHandler = e => {
         e.persist()
@@ -111,52 +114,63 @@ class CalculateInputSection extends Component {
                                     <span></span>
                                 </label>
                             </div>
-                        </div>       
-                        {
-                            calculateBy === "ball" ? (
-                                <>
-                                    <div className="row individual-input">
-                                        <div className="col-sm-12 col-md-6 col-lg-6 input-name">
-                                            {inputDescription1}
-                                        </div>
-                                        <input className="col-sm-12 col-md-6 col-lg-6" type="number"
-                                            name="ballWeight"
-                                            value={ballWeight}
-                                            onChange={this.changeInputHandler}
-                                            onFocus={this.clearInput}
-                                            onBlur={this.restoreOnBlur}
-                                        />
-                                    </div>
-                                    <div className="row individual-input">
-                                        <div className="col-sm-12 col-md-6 col-lg-6 input-name">
-                                            {inputDescription2}
-                                        </div>
-                                        <input className="col-sm-12 col-md-6 col-lg-6" type="number" 
-                                            name="pizzaCount"
-                                            value={pizzaCount}
-                                            onChange={this.changeInputHandler}
-                                            onFocus={this.clearInput}
-                                            onBlur={this.restoreOnBlur}
-                                        />
-                                    </div>
-                                </>
-                            ) : (
-                                <>
-                                    <div className="row individual-input">
-                                        <div className="col-sm-12 col-md-6 col-lg-6 input-name">
-                                            {inputDescription3}
-                                        </div>
-                                        <input className="col-sm-12 col-md-6 col-lg-6" type="number"
-                                            name="flourWeight"
-                                            value={flourWeight}
-                                            onChange={this.changeInputHandler}
-                                            onFocus={this.clearInput}
-                                            onBlur={this.restoreOnBlur}
-                                        />
-                                    </div>
-                                </>
-                            )
-                        } 
+                        </div>
+                        <SwitchTransition mode="out-in">
+                            <CSSTransition
+                                classNames="fade"
+                                timeout={300}
+                                key={calculateBy==="ball"}
+                                nodeRef={this.nodeRef}
+                            >
+                                <div className="user-inputs" ref={this.nodeRef}>
+                                    {
+                                        calculateBy === "ball" ? (
+                                            <section>
+                                                <div className="row individual-input">
+                                                    <div className="col-sm-12 col-md-6 col-lg-6 input-name">
+                                                        {inputDescription1}
+                                                    </div>
+                                                    <input className="col-sm-12 col-md-6 col-lg-6" type="number"
+                                                        name="ballWeight"
+                                                        value={ballWeight}
+                                                        onChange={this.changeInputHandler}
+                                                        onFocus={this.clearInput}
+                                                        onBlur={this.restoreOnBlur}
+                                                    />
+                                                </div>
+                                                <div className="row individual-input">
+                                                    <div className="col-sm-12 col-md-6 col-lg-6 input-name">
+                                                        {inputDescription2}
+                                                    </div>
+                                                    <input className="col-sm-12 col-md-6 col-lg-6" type="number" 
+                                                        name="pizzaCount"
+                                                        value={pizzaCount}
+                                                        onChange={this.changeInputHandler}
+                                                        onFocus={this.clearInput}
+                                                        onBlur={this.restoreOnBlur}
+                                                    />
+                                                </div>
+                                            </section>
+                                        ) : (
+                                            <section>
+                                                <div className="row individual-input">
+                                                    <div className="col-sm-12 col-md-6 col-lg-6 input-name">
+                                                        {inputDescription3}
+                                                    </div>
+                                                    <input className="col-sm-12 col-md-6 col-lg-6" type="number"
+                                                        name="flourWeight"
+                                                        value={flourWeight}
+                                                        onChange={this.changeInputHandler}
+                                                        onFocus={this.clearInput}
+                                                        onBlur={this.restoreOnBlur}
+                                                    />
+                                                </div>
+                                            </section>
+                                        )
+                                    }
+                                </div>
+                            </CSSTransition>
+                        </SwitchTransition>
                         <div className="row individual-input">
                             <div className="col-sm-12 col-md-6 col-lg-6 input-name">
                                 {inputDescription4}

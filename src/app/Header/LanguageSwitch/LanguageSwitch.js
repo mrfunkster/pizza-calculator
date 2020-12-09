@@ -1,4 +1,3 @@
-import React from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import { switchToEN, switchToRU } from '../../../common/store/actions'
@@ -11,6 +10,8 @@ const LanguageSwitch = ({
     switchToEN,
     switchToRU
 }) => {
+
+    
 
     const LanguageSwitch = () => {
         if(currentLanguage === "EN") {

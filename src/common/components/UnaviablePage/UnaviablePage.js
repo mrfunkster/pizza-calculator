@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { motion } from 'framer-motion'
 
 import './UnaviablePage.css'
 
@@ -13,16 +14,20 @@ const UnaviablePage = ({
     unavivablePageDescription4,
     unavivablePageButton
 }) => {
-    console.log(history)
     return (
-        <div className="unaviable-page">
+        <motion.div className="unaviable-page"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3, transition: 'ease-in-out' }}   
+        >
             <h2>{unavivablePageTitle}</h2>
             <h3>{unavivablePageDescription1} "<span className="gold-span">{document.location.host}/</span><span>{history.location.pathname.substr(1)}</span>" {unavivablePageDescription2} <br/>"<span>{unavivablePageDescription3}</span>"</h3>
             <h3>{unavivablePageDescription4}</h3>
             <div className="link-button">
                 <div className="un-btn" onClick={() => history.push('/')}>{unavivablePageButton}</div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

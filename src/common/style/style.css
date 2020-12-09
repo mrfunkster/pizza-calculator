@@ -55,3 +55,24 @@ h3 {
     line-height: 20px;
     padding: 15px;
 }
+
+
+/* CSSTransition */
+.switch-transition {
+    width: 100%;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity .3s ease-in;
+}
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity .3s ease-out;
+}
