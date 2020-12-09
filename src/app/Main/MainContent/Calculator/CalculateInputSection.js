@@ -68,15 +68,28 @@ class CalculateInputSection extends Component {
             resetInputs,
             pizzaCount,
             ballWeight,
-            flourWeight
+            flourWeight,
+
+            pageTitle,
+            radioTitle,
+            radioContent1,
+            radioContent2,
+            inputDescription1,
+            inputDescription2,
+            inputDescription3,
+            inputDescription4,
+            fresh,
+            dry,
+            resetButton,
+            submitButton
         } = this.props
         return (
             <>
                 <ScrollToTopOnMount />
-                <h3>Let's calculate some ingridients!</h3>
+                <h3>{pageTitle}</h3>
                 <div className="input-section">
                     <form onSubmit={(e) => e.preventDefault()}>
-                        <h3>Choose correct answer:</h3>
+                        <h3>{radioTitle}</h3>
                         <div className="radio-section">
                             <div className="row radio-block">
                                 <label className={calculateBy === "ball" ? "col-sm-12 col-md-6 col-lg-6 radio-label active" : "col-sm-12 col-md-6 col-lg-6 radio-label"}>
@@ -85,8 +98,8 @@ class CalculateInputSection extends Component {
                                         checked={calculateBy === "ball"}
                                         onChange={this.changeRadioHandler}
                                     />
-                                I know weight off pizza dough
-                                <span></span>
+                                    {radioContent1}
+                                    <span></span>
                                 </label>
                                 <label className={calculateBy === "flour" ? "col-sm-12 col-md-6 col-lg-6 radio-label active" : "col-sm-12 col-md-6 col-lg-6 radio-label"}>
                                     <input type="radio"
@@ -94,7 +107,7 @@ class CalculateInputSection extends Component {
                                         checked={calculateBy === "flour"}
                                         onChange={this.changeRadioHandler}
                                     />
-                                    I know how many flour i want to use
+                                    {radioContent2}
                                     <span></span>
                                 </label>
                             </div>
@@ -104,7 +117,7 @@ class CalculateInputSection extends Component {
                                 <>
                                     <div className="row individual-input">
                                         <div className="col-sm-12 col-md-6 col-lg-6 input-name">
-                                            Pizza-ball weight for 1 pizza(g):
+                                            {inputDescription1}
                                         </div>
                                         <input className="col-sm-12 col-md-6 col-lg-6" type="number"
                                             name="ballWeight"
@@ -116,7 +129,7 @@ class CalculateInputSection extends Component {
                                     </div>
                                     <div className="row individual-input">
                                         <div className="col-sm-12 col-md-6 col-lg-6 input-name">
-                                            Count of pizza's:
+                                            {inputDescription2}
                                         </div>
                                         <input className="col-sm-12 col-md-6 col-lg-6" type="number" 
                                             name="pizzaCount"
@@ -131,7 +144,7 @@ class CalculateInputSection extends Component {
                                 <>
                                     <div className="row individual-input">
                                         <div className="col-sm-12 col-md-6 col-lg-6 input-name">
-                                            Flour weight(g):
+                                            {inputDescription3}
                                         </div>
                                         <input className="col-sm-12 col-md-6 col-lg-6" type="number"
                                             name="flourWeight"
@@ -146,14 +159,14 @@ class CalculateInputSection extends Component {
                         } 
                         <div className="row individual-input">
                             <div className="col-sm-12 col-md-6 col-lg-6 input-name">
-                                Are you using fresh or dry yeast?
+                                {inputDescription4}
                             </div>
                             <div className="col-sm-12 col-md-6 col-lg-6 checkbox-input">
                                 <input type="checkbox" className="switch__checkbox"
                                     checked={isFresh}
                                     onChange={e => isFreshYeast(e.target.checked)}
                                 />
-                                <div className="checkbox-description">{isFresh ? "Fresh" : "Dry"}</div>
+                                <div className="checkbox-description">{isFresh ? fresh : dry}</div>
                             </div>
                         </div>
                     </form>
@@ -164,14 +177,14 @@ class CalculateInputSection extends Component {
                             <div className="link-button cancel">
                                 <div className="un-btn"
                                     onClick={() => resetInputs()}
-                                >Reset to default</div>
+                                >{resetButton}</div>
                             </div>
                         </div>
                         <div className="col-sm-12 col-md-6 col-lg-6">
                             <div className="link-button submit">
                                 <div className="un-btn"
                                     onClick={() => this.checkInputsAndSubmit()}
-                                >Calculate</div>
+                                >{submitButton}</div>
                             </div>
                         </div>
                     </div>
@@ -196,7 +209,20 @@ const mapStateToProps = state => ({
     pizzaCount: state.calculationData.pizzaCount,
     ballWeight: state.calculationData.ballWeight,
     calculateBy: state.calculationData.calculateBy,
-    flourWeight: state.calculationData.flourWeight
+    flourWeight: state.calculationData.flourWeight,
+
+    pageTitle: state.localization.main.mainContent.calculate.calculateInputSection.pageTitle,
+    radioTitle: state.localization.main.mainContent.calculate.calculateInputSection.radioTitle,
+    radioContent1: state.localization.main.mainContent.calculate.calculateInputSection.radioContent1,
+    radioContent2: state.localization.main.mainContent.calculate.calculateInputSection.radioContent2,
+    inputDescription1: state.localization.main.mainContent.calculate.calculateInputSection.inputDescription1,
+    inputDescription2: state.localization.main.mainContent.calculate.calculateInputSection.inputDescription2,
+    inputDescription3: state.localization.main.mainContent.calculate.calculateInputSection.inputDescription3,
+    inputDescription4: state.localization.main.mainContent.calculate.calculateInputSection.inputDescription4,
+    fresh: state.localization.main.mainContent.calculate.calculateInputSection.fresh,
+    dry: state.localization.main.mainContent.calculate.calculateInputSection.dry,
+    resetButton: state.localization.main.mainContent.calculate.calculateInputSection.resetButton,
+    submitButton: state.localization.main.mainContent.calculate.calculateInputSection.submitButton
 })
 
 export default connect(

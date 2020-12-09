@@ -17,7 +17,36 @@ const localization = {
                     whatPageButton: "Let's go!"
                 },
                 calculate: {
-                    calculatePageTitle: "Pizza-calculator"
+                    calculatePageTitle: "Pizza-calculator",
+                    calculateInputSection: {
+                        pageTitle: "Let's calculate some ingridients!",
+                        radioTitle: "Choose correct answer:",
+                        radioContent1: "I know weight off pizza dough",
+                        radioContent2: "I know how many flour i want to use",
+                        inputDescription1: "Pizza-ball weight for 1 pizza(g):",
+                        inputDescription2: "Count of pizza's:",
+                        inputDescription3: "Flour weight(g):",
+                        inputDescription4: "Are you using fresh or dry yeast?",
+                        fresh: "Fresh",
+                        dry: "Dry",
+                        resetButton: "Reset to default",
+                        submitButton: "Calculate"
+                    },
+                    calculationResult: {
+                        pageTitle: "Calculation Result:",
+                        mass: "g",
+                        count: "pcs",
+                        volume: "ml",
+                        resultDescription1: "Pizza-ball weight:",
+                        resultDescription2: "Count of Pizza's:",
+                        resultDescription3: "Flour:",
+                        resultDescription4: "Water:",
+                        resultDescription5: "Olive Oil:",
+                        resultDescription6: "Sugar:",
+                        resultDescription7: "Salt:",
+                        resultDescription8: "Yeast",
+                        backButton: "Try another reciept?"
+                    }
                 },
                 about: {
                     aboutPageTitle: "About this Project"
@@ -80,7 +109,36 @@ const localization = {
                     whatPageButton: "Вперед!"
                 },
                 calculate: {
-                    calculatePageTitle: "Пицца-калькулятор"
+                    calculatePageTitle: "Пицца-калькулятор",
+                    calculateInputSection: {
+                        pageTitle: "Время посчитать ингридиенты!",
+                        radioTitle: "Выберите правильное утверждение:",
+                        radioContent1: "Я знаю сколько теста должно получится",
+                        radioContent2: "У меня есть мука и я хочу узнать сколько ингридиентов нужно",
+                        inputDescription1: "Вес одной основы, г:",
+                        inputDescription2: "Количество основ, шт:",
+                        inputDescription3: "Вес муки, г:",
+                        inputDescription4: "Какие дрожжи предпочитаете?",
+                        fresh: "Живые",
+                        dry: "Сухие",
+                        resetButton: "Начнем сначала?",
+                        submitButton: "Считаем!"
+                    },
+                    calculationResult: {
+                        pageTitle: "Результаты расчета:",
+                        mass: "г",
+                        count: "шт",
+                        volume: "мл",
+                        resultDescription1: "Вес основы:",
+                        resultDescription2: "Количество пицц:",
+                        resultDescription3: "Мука:",
+                        resultDescription4: "Вода:",
+                        resultDescription5: "Оливковое масло:",
+                        resultDescription6: "Сахар:",
+                        resultDescription7: "Соль:",
+                        resultDescription8: "Дрожжи",
+                        backButton: "Попробуем другие пропорции?"
+                    }
                 },
                 about: {
                     aboutPageTitle: "Об этом проекте"
