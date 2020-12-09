@@ -39,21 +39,22 @@ class CalculateInputSection extends Component {
                 console.log("PIZZA COUNT EMPTY")
             }
         } else {
-            if(this.props.calculateBy === 'ball') {
-                this.props.calculateInputs()
-            } else {
-                this.props.calculateByFlour()
+            if(this.props.calculateBy !== "") {
+                if(this.props.calculateBy === 'ball') {
+                    this.props.calculateInputs()
+                } else {
+                    this.props.calculateByFlour()
+                }
             }
-            
         }
     }
 
     restoreOnBlur = e => {
         e.persist()
         const defaultValue = {
-            ballWeight: 200,
+            ballWeight: 220,
             pizzaCount: 1,
-            flourWeight: 200
+            flourWeight: 132
         }
         let key = e.target.name
         if(!this.props[key]) {
@@ -124,6 +125,7 @@ class CalculateInputSection extends Component {
                             >
                                 <div className="user-inputs" ref={this.nodeRef}>
                                     {
+                                        calculateBy && (
                                         calculateBy === "ball" ? (
                                             <section>
                                                 <div className="row individual-input">
@@ -150,6 +152,18 @@ class CalculateInputSection extends Component {
                                                         onBlur={this.restoreOnBlur}
                                                     />
                                                 </div>
+                                                <div className="row individual-input">
+                                                    <div className="col-sm-12 col-md-6 col-lg-6 input-name">
+                                                        {inputDescription4}
+                                                    </div>
+                                                    <div className="col-sm-12 col-md-6 col-lg-6 checkbox-input">
+                                                        <input type="checkbox" className="switch__checkbox"
+                                                            checked={isFresh}
+                                                            onChange={e => isFreshYeast(e.target.checked)}
+                                                        />
+                                                        <div className="checkbox-description">{isFresh ? fresh : dry}</div>
+                                                    </div>
+                                                </div>
                                             </section>
                                         ) : (
                                             <section>
@@ -165,24 +179,25 @@ class CalculateInputSection extends Component {
                                                         onBlur={this.restoreOnBlur}
                                                     />
                                                 </div>
+                                                <div className="row individual-input">
+                                                    <div className="col-sm-12 col-md-6 col-lg-6 input-name">
+                                                        {inputDescription4}
+                                                    </div>
+                                                    <div className="col-sm-12 col-md-6 col-lg-6 checkbox-input">
+                                                        <input type="checkbox" className="switch__checkbox"
+                                                            checked={isFresh}
+                                                            onChange={e => isFreshYeast(e.target.checked)}
+                                                        />
+                                                        <div className="checkbox-description">{isFresh ? fresh : dry}</div>
+                                                    </div>
+                                                </div>
                                             </section>
+                                        )
                                         )
                                     }
                                 </div>
                             </CSSTransition>
-                        </SwitchTransition>
-                        <div className="row individual-input">
-                            <div className="col-sm-12 col-md-6 col-lg-6 input-name">
-                                {inputDescription4}
-                            </div>
-                            <div className="col-sm-12 col-md-6 col-lg-6 checkbox-input">
-                                <input type="checkbox" className="switch__checkbox"
-                                    checked={isFresh}
-                                    onChange={e => isFreshYeast(e.target.checked)}
-                                />
-                                <div className="checkbox-description">{isFresh ? fresh : dry}</div>
-                            </div>
-                        </div>
+                        </SwitchTransition> 
                     </form>
                 </div>
                 <div className="button-container">
