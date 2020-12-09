@@ -27,6 +27,13 @@ const App = ({
         } else {
             switchToEN()
         }
+        window.addEventListener('resize', () => {
+            let width = document.documentElement.clientWidth
+            if(width >= 768 && document.body.classList.contains('lock')) {
+                document.body.classList.remove('lock')
+                console.log(width)
+            }            
+        })
     })
 
     return (
