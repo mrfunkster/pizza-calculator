@@ -15,6 +15,7 @@
 .menu-list li:hover {
     background-color: var(--secondary-background-color);
     box-shadow: var(--secondary-box-shadow);
+    transition: var(--transition);
 }
 .menu-list li.active {
     background-color: var(--secondary-background-color);

@@ -1,11 +1,12 @@
-import { BACK_TO_CALCULATION_INPUTS, CALCULATE_INPUTS, INPUT_HANDLER, IS_FRESH_YEAST, RESET_INPUTS } from "./types"
+import { BACK_TO_CALCULATION_INPUTS, CALCULATE_BY_FLOUR, CALCULATE_INPUTS, INPUT_HANDLER, IS_FRESH_YEAST, RADIO_TOGGLE, RESET_INPUTS } from "./types"
 
 const initialState = {
+    calculateBy: "ball",
     isCalculated: false,
     ballWeight: 220,
     pizzaCount: 1,
     isFresh: true,
-    flourWeight: "",
+    flourWeight: 200,
     waterWeight: "",
     sugarWeight: "",
     saltWeight: "",
@@ -25,16 +26,33 @@ const calculateReducer = (state = initialState, action) => {
                 ...state,
                 [action.key]: action.value 
             }
+        case RADIO_TOGGLE:
+            return {
+                ...state,
+                calculateBy: action.value
+            }
         case CALCULATE_INPUTS:
             return {
                 ...state,
                 isCalculated: true,
-                flourWeight: (state.pizzaCount * state.ballWeight * 0.6).toFixed(1),
-                waterWeight: (state.pizzaCount * state.ballWeight * 0.32).toFixed(1),
-                sugarWeight: (state.pizzaCount * state.ballWeight * 0.018).toFixed(1),
-                saltWeight: (state.pizzaCount * state.ballWeight * 0.009).toFixed(1),
-                oliveOilWeight: (state.pizzaCount * state.ballWeight * 0.048).toFixed(1),
-                yeastWeight: state.isFresh ? (state.pizzaCount * state.ballWeight * 0.0025).toFixed(1) : (state.pizzaCount * state.ballWeight * 0.005).toFixed(1)
+                flourWeight: Math.round(state.pizzaCount * state.ballWeight * 0.6),
+                waterWeight: Math.round(state.pizzaCount * state.ballWeight * 0.6 * 0.55),
+                sugarWeight: (state.pizzaCount * state.ballWeight * 0.6 * 0.03).toFixed(1),
+                saltWeight: (state.pizzaCount * state.ballWeight * 0.6 * 0.015).toFixed(1),
+                oliveOilWeight: Math.round(state.pizzaCount * state.ballWeight * 0.6 * 0.08),
+                yeastWeight: state.isFresh ? (state.pizzaCount * state.ballWeight * 0.6 * 0.015).toFixed(1) : (state.pizzaCount * state.ballWeight * 0.6 * 0.008).toFixed(1)
+            }
+        case CALCULATE_BY_FLOUR:
+            return {
+                ...state,
+                isCalculated: true,
+                waterWeight: Math.round(state.flourWeight * 0.55),
+                oliveOilWeight: Math.round(state.flourWeight * 0.08),
+                sugarWeight: (state.flourWeight * 0.03).toFixed(1),
+                saltWeight: (state.flourWeight * 0.015).toFixed(1),
+                yeastWeight: state.isFresh ? (state.flourWeight * 0.015).toFixed(1) : (state.flourWeight * 0.008).toFixed(1),
+                ballWeight: Math.round(state.flourWeight / 60 * 100),
+                pizzaCount: 1
             }
         case RESET_INPUTS:
             return initialState

@@ -12,7 +12,9 @@ const CalculationResult = ({
     saltWeight,
     yeastWeight,
     oliveOilWeight,
-    isFresh
+    isFresh,
+    ballWeight,
+    pizzaCount
 }) => {
     return (
         <>
@@ -20,6 +22,14 @@ const CalculationResult = ({
             <br/>
             <h3>Calculation Result:</h3>
             <div className="result-section">
+                <div className="row individual-result">
+                    <div className="col-sm-6 col-md-6 col-lg-6 result-description">Pizza-ball weight:</div>
+                    <div className="col-sm-6 col-md-6 col-lg-6 result">{ballWeight} g</div>
+                </div>
+                <div className="row individual-result">
+                    <div className="col-sm-6 col-md-6 col-lg-6 result-description">Count of Pizza's:</div>
+                    <div className="col-sm-6 col-md-6 col-lg-6 result">{pizzaCount} pcs</div>
+                </div>
                 <div className="row individual-result">
                     <div className="col-sm-6 col-md-6 col-lg-6 result-description">Flour:</div>
                     <div className="col-sm-6 col-md-6 col-lg-6 result">{flourWeight} g</div>
@@ -65,7 +75,9 @@ const mapStateToProps = state => ({
     sugarWeight: state.calculationData.sugarWeight,
     saltWeight: state.calculationData.saltWeight,
     yeastWeight: state.calculationData.yeastWeight,
-    oliveOilWeight: state.calculationData.oliveOilWeight
+    oliveOilWeight: state.calculationData.oliveOilWeight,
+    ballWeight: state.calculationData.ballWeight,
+    pizzaCount: state.calculationData.pizzaCount
 })
 
 export default connect(

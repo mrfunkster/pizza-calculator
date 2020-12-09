@@ -41,10 +41,10 @@
     padding: 15px;
     padding-bottom: 0 !important;
 }
-.calculator-page input {
+.calculator-page input[type=number] {
     outline: none;
     background-color: var(--secondary-main-menu-background);
-    box-shadow: var(--secondary-box-shadow);
+    box-shadow: var(--secondary-box-shadow) !important;
     transition: var(--transition);
     border-radius: 15px;
     border: none;
@@ -52,6 +52,15 @@
     font-size: 18px;
     text-align: center;
 }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 .calculator-page {
     font-size: 18px;
 }
@@ -96,6 +105,59 @@
 .individual-result div:last-child {
     color: var(--third-text-color)
 }
+
+.radio-section {
+    padding: 0 15px;
+}
+
+.radio-block {
+    padding: 15px !important;
+    background-color: var(--secondary-main-menu-background);
+    box-shadow: var(--secondary-box-shadow);
+    transition: background-color var(--transition);
+    border-radius: 15px;
+}
+
+.radio-label {
+    font-size: 18px;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+.radio-label.active {
+    color: var(--third-text-color);
+}
+.radio-label input[type=radio] {
+    display: none;
+
+}
+.radio-label span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-background-color);
+    transition: var(--transition);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.radio-label span::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--secondary-background-color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: var(--transition);
+}
+.radio-label input[type=radio]:checked ~ span:after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
 @media(max-width: 767px) {
     .calculator-header-img {
         width: 100%;
@@ -115,5 +177,11 @@
     }
     .individual-input {
         padding-bottom: 15px;
+    }
+    .radio-label {
+        padding-bottom: 15px;
+    }
+    .radio-label:last-child {
+        padding-bottom: 0;
     }
 }
