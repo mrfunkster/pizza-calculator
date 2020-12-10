@@ -3,10 +3,13 @@ import { connect } from 'react-redux'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import ScrollToTopOnMount from '../../../../common/components/ScrollToTopOnMount'
 import { isFreshYeast, inputHandler, resetInputs, calculateInputs, radioToggle, calculateByFlour } from '../../../../common/store/actions'
+import {  animateScroll as scroll } from 'react-scroll'
+
 
 class CalculateInputSection extends Component {
 
     nodeRef = createRef(null)
+    scrollRef = createRef(null)
 
     changeInputHandler = e => {
         e.persist()
@@ -64,6 +67,17 @@ class CalculateInputSection extends Component {
         }
     }
 
+    scrollToElement = () => {
+        if(this.nodeRef.current) {
+            const position = this.nodeRef.current.getBoundingClientRect().y;
+            scroll.scrollTo(position, {
+                duratiion: 300,
+                smooth: true,
+                delay: 300
+            })
+        }
+    }
+
     render() { 
         const {
             calculateBy,
@@ -87,6 +101,7 @@ class CalculateInputSection extends Component {
             resetButton,
             submitButton
         } = this.props
+
         return (
             <>
                 <ScrollToTopOnMount />
@@ -128,6 +143,9 @@ class CalculateInputSection extends Component {
                                         calculateBy && (
                                         calculateBy === "ball" ? (
                                             <section>
+                                                {
+                                                    this.scrollToElement()
+                                                }
                                                 <div className="row individual-input">
                                                     <div className="col-sm-12 col-md-6 col-lg-6 input-name">
                                                         {inputDescription1}
@@ -167,6 +185,9 @@ class CalculateInputSection extends Component {
                                             </section>
                                         ) : (
                                             <section>
+                                                {
+                                                    this.scrollToElement()
+                                                }
                                                 <div className="row individual-input">
                                                     <div className="col-sm-12 col-md-6 col-lg-6 input-name">
                                                         {inputDescription3}

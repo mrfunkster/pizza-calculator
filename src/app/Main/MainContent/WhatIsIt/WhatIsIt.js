@@ -23,12 +23,12 @@ const WhatIsIt = ({
         >
             <ScrollToTopOnMount />
             <div className="what-header-img">
-                <img src="/images/pizza.png" alt="pizza"/>
+                <img src="/images/pizza.webp" alt="pizza"/>
             </div>
             <h2>{whatPageTitle}</h2>
             <h3>{whatPageDescription}</h3>
             <div className="what-header-img">
-                <img src="/images/pizza2.png" alt="pizza"/>
+                <img src="/images/pizza2.webp" alt="pizza"/>
             </div>
             <div className="link-button">
                 <Link to="/calculate">{whatPageButton}</Link>

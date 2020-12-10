@@ -9,12 +9,14 @@
     bottom: 61px;
     right: 15px;
     visibility: hidden;
+    transform: scale(0.5);
     opacity: 0;
     transition: var(--transition)
 }
 .scroll-btn.show {
     visibility: visible;
     opacity: .8;
+    transform: scale(1);
 }
 .scroll-btn-arrow {
     width: 20px;

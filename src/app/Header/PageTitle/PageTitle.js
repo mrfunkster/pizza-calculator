@@ -12,7 +12,7 @@ const PageTitle = ({
         <div className="col-sm-4 col page-title">
             <div className="page-title-mobile">
                 <Link to="/">
-                    <span>🍕</span>
+                    <img src="/images/pizza-logo-s.webp" alt="" style={{ width: "40px" }}/>
                 </Link>
             </div>
             <div className="page-title-main">
