@@ -111,7 +111,9 @@ class CalculateInputSection extends Component {
                         <h3>{radioTitle}</h3>
                         <div className="radio-section">
                             <div className="row radio-block">
-                                <label className={calculateBy === "ball" ? "col-sm-12 col-md-6 col-lg-6 radio-label active" : "col-sm-12 col-md-6 col-lg-6 radio-label"}>
+                                <label className={calculateBy === "ball" ? "col-sm-12 col-md-6 col-lg-6 radio-label active" : "col-sm-12 col-md-6 col-lg-6 radio-label"}
+                                    onClick={this.scrollToElement}
+                                >
                                     <input type="radio"
                                         value={"ball"}
                                         checked={calculateBy === "ball"}
@@ -120,7 +122,9 @@ class CalculateInputSection extends Component {
                                     {radioContent1}
                                     <span></span>
                                 </label>
-                                <label className={calculateBy === "flour" ? "col-sm-12 col-md-6 col-lg-6 radio-label active" : "col-sm-12 col-md-6 col-lg-6 radio-label"}>
+                                <label className={calculateBy === "flour" ? "col-sm-12 col-md-6 col-lg-6 radio-label active" : "col-sm-12 col-md-6 col-lg-6 radio-label"}
+                                    onClick={this.scrollToElement}
+                                >
                                     <input type="radio"
                                         value={"flour"}
                                         checked={calculateBy === "flour"}
@@ -143,9 +147,6 @@ class CalculateInputSection extends Component {
                                         calculateBy && (
                                         calculateBy === "ball" ? (
                                             <section>
-                                                {
-                                                    this.scrollToElement()
-                                                }
                                                 <div className="row individual-input">
                                                     <div className="col-sm-12 col-md-6 col-lg-6 input-name">
                                                         {inputDescription1}
@@ -185,9 +186,6 @@ class CalculateInputSection extends Component {
                                             </section>
                                         ) : (
                                             <section>
-                                                {
-                                                    this.scrollToElement()
-                                                }
                                                 <div className="row individual-input">
                                                     <div className="col-sm-12 col-md-6 col-lg-6 input-name">
                                                         {inputDescription3}
