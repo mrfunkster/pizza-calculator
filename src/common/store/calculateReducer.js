@@ -35,23 +35,23 @@ const calculateReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isCalculated: true,
-                flourWeight: Math.round(state.pizzaCount * state.ballWeight * 0.6),
-                waterWeight: Math.round(state.pizzaCount * state.ballWeight * 0.6 * 0.55),
-                sugarWeight: (state.pizzaCount * state.ballWeight * 0.6 * 0.03).toFixed(1),
-                saltWeight: (state.pizzaCount * state.ballWeight * 0.6 * 0.015).toFixed(1),
-                oliveOilWeight: Math.round(state.pizzaCount * state.ballWeight * 0.6 * 0.08),
-                yeastWeight: state.isFresh ? (state.pizzaCount * state.ballWeight * 0.6 * 0.015).toFixed(1) : (state.pizzaCount * state.ballWeight * 0.6 * 0.008).toFixed(1)
+                flourWeight: Math.round(state.pizzaCount * state.ballWeight * 0.559),
+                waterWeight: Math.round(state.pizzaCount * state.ballWeight * 0.559 * 0.65),
+                sugarWeight: (state.pizzaCount * state.ballWeight * 0.559 * 0.03).toFixed(1),
+                saltWeight: (state.pizzaCount * state.ballWeight * 0.559 * 0.015).toFixed(1),
+                oliveOilWeight: Math.round(state.pizzaCount * state.ballWeight * 0.559 * 0.08),
+                yeastWeight: state.isFresh ? (state.pizzaCount * state.ballWeight * 0.559 * 0.015).toFixed(1) : (state.pizzaCount * state.ballWeight * 0.559 * 0.008).toFixed(1)
             }
         case CALCULATE_BY_FLOUR:
             return {
                 ...state,
                 isCalculated: true,
-                waterWeight: Math.round(state.flourWeight * 0.55),
+                waterWeight: Math.round(state.flourWeight * 0.65),
                 oliveOilWeight: Math.round(state.flourWeight * 0.08),
                 sugarWeight: (state.flourWeight * 0.03).toFixed(1),
                 saltWeight: (state.flourWeight * 0.015).toFixed(1),
                 yeastWeight: state.isFresh ? (state.flourWeight * 0.015).toFixed(1) : (state.flourWeight * 0.008).toFixed(1),
-                ballWeight: Math.round(state.flourWeight / 60 * 100),
+                ballWeight: Math.round(state.flourWeight / 55.9 * 100),
                 pizzaCount: 1
             }
         case RESET_INPUTS:
